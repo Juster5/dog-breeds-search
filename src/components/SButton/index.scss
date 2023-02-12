@@ -1,0 +1,16 @@
+.action-button {
+  margin-left: 12px;
+  display: inline-block;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  width: 60px;
+  font-size: 14px;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #05c28c;
+  &:hover {
+    background-color: #00996d;
+  }
+}
