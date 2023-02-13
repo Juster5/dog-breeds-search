@@ -1,4 +1,4 @@
-import SortDagBreed,{ commpareArea,LIFE_SPAN_DESC } from './SortDogBreed';
+import SortDagBreed,{ commpareArea,LIFE_SPAN_DESC,LIFE_SPAN_ASC } from './SortDogBreed';
 
 describe('commpareArea',() => {
 
@@ -27,7 +27,7 @@ describe('commpareArea',() => {
 
 describe('SortDagBreed by life span',() => {
 
-  test('SortDagBreed by life span',() => {
+  test('SortDagBreed by life span desc',() => {
     const data = [{
       life_span: '8 - 15 years'
     },{
@@ -49,5 +49,30 @@ describe('SortDagBreed by life span',() => {
     }])
   })
 
+  test('SortDagBreed by life span asc',() => {
+    const data = [{
+      life_span: '8 - 15 years'
+    },{
+      life_span: '8 - 12 years'
+    },{
+      life_span: '7 - 19 years'
+    },{
+      life_span: '12 years'
+    }]
+
+    expect(SortDagBreed({ data,sortOption: LIFE_SPAN_ASC })).toEqual([{
+      life_span: '8 - 12 years'
+
+    },{
+      life_span: '12 years'
+
+    },{
+      life_span: '8 - 15 years'
+
+    },{
+      life_span: '7 - 19 years'
+
+    }])
+  })
 
 })

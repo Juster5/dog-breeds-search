@@ -36,6 +36,9 @@ const SImage = (props: SImageProps) => {
           setHasError(true)
         }
       )
+      .catch(() => {
+        setHasError(true)
+      })
       .finally(() => {
         setLoading(false)
       })

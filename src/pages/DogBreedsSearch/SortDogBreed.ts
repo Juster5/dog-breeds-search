@@ -1,11 +1,11 @@
 import { MenuItemType } from "../../components/SSlector"
-export const PLEASE_SELECT = "default"
-export const HEIGHT_DESC = "height desc"
-export const HEIGHT_ASC = "height asc"
-export const NAME_DESC = "name desc"
-export const NAME_ASC = "name asc"
-export const LIFE_SPAN_DESC = "life span desc"
-export const LIFE_SPAN_ASC = "life span asc"
+export const PLEASE_SELECT = "Default"
+export const HEIGHT_DESC = "Height Desc"
+export const HEIGHT_ASC = "Height Asc"
+export const NAME_DESC = "Name Desc"
+export const NAME_ASC = "Name asc"
+export const LIFE_SPAN_DESC = "Life Span Desc"
+export const LIFE_SPAN_ASC = "Life Span Asc"
 
 export const SortOptions: MenuItemType[] = [
   {
@@ -36,9 +36,9 @@ type SortDogBreesProps = {
   sortOption: string
 }
 
-// longest years is priority, eg '8 - 12' < '7 - 13'
-// if longest years equals, compare shortest years, eg '7 - 12' < '8 - 12'
-// if only one year provided, longest years and shortest years is the same, eg '12' = '12 - 12' < '12 - 13';  '12' = '12-12'>'11 -12'
+// 1 longest years is priority, eg '8 - 12' < '7 - 13'
+// 2 if longest years equals, compare shortest years, eg '7 - 12' < '8 - 12'
+// 3 if only one year provided, longest years and shortest years is the same, eg '12' = '12 - 12' < '12 - 13';  '12' = '12-12'>'11 -12'
 export const commpareArea = (a: string, b: string) => {
   if (a === "" && b === "") {
     return 0

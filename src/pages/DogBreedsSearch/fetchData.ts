@@ -13,8 +13,11 @@ const fetchData = async () => {
     } else {
       return Promise.reject(response.statusText)
     }
-  } catch (e) {
-    return Promise.reject("Network error!")
+  } catch (e: any) {
+    // console.log("==================")
+    // console.log(e)
+    // console.log("==================")
+    return Promise.reject(e.statusText || "Network error!")
   }
 }
 

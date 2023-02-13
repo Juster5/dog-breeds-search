@@ -55,6 +55,7 @@ const SSelector: React.FC<SelectorProps> = (props) => {
 
   return (
     <div
+      data-testid="s-selector"
       className={`s-selector-wrapper ${showMenu && " active"}`}
       onClick={(e) => {
         e.stopPropagation()
@@ -99,4 +100,4 @@ const SSelector: React.FC<SelectorProps> = (props) => {
   )
 }
 
-export default SSelector
+export default React.memo(SSelector)

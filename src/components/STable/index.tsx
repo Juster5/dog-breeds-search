@@ -13,7 +13,7 @@ export type TablePropsType = {
   data: any[]
 }
 
-const OKTable: React.FC<TablePropsType> = (props) => {
+const STable: React.FC<TablePropsType> = (props) => {
   const { data, column } = props
 
   return (
@@ -52,4 +52,4 @@ const OKTable: React.FC<TablePropsType> = (props) => {
   )
 }
 
-export default React.memo(OKTable)
+export default React.memo(STable)

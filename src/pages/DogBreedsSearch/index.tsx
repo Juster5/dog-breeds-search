@@ -7,21 +7,23 @@ import debounce from "../../utils/debounce"
 import fetchData from "./fetchData"
 import Column from "./Column"
 import SortDogBrees, { SortOptions } from "./SortDogBreed"
-
 import "./index.scss"
 
 const DogBreedsSearch = () => {
   const [sortOption, setSortOption] = useState(SortOptions[0].title)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(false)
   const [data, setData] = useState<any>([])
 
   const debounceFetch = useMemo(() => {
     return debounce(() => {
-      if (loading) return
       setLoading(true)
       fetchData()
         .then((data) => {
           setData(data)
+        })
+        .catch((err) => {
+          setError(true)
         })
         .finally(() => {
           setLoading(false)
@@ -48,6 +50,7 @@ const DogBreedsSearch = () => {
 
   return (
     <div className='dog-breeds-search'>
+      <h1 className='dog-breeds-search__title'>Dog Breeds Search</h1>
       <div>
         <span className='sort-by-text'>SortBy</span>
         <SSelect
@@ -60,7 +63,10 @@ const DogBreedsSearch = () => {
           Search
         </SButton>
       </div>
-      {loading ? <Loading /> : <STable data={data} column={Column} />}
+
+      {error && <button onClick={debounceFetch}> somethings error, click reload again</button>}
+
+      {!error && loading ? <Loading /> : <STable data={data} column={Column} />}
     </div>
   )
 }

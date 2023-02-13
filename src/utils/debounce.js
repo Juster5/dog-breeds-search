@@ -1,4 +1,6 @@
-const debounce = (fn, delay = 1000) => {
+
+
+const debounce = (fn,delay = 1000) => {
   if (typeof fn !== "function") {
     throw new Error("first param should be a function!")
   }
@@ -11,7 +13,7 @@ const debounce = (fn, delay = 1000) => {
     timer = setTimeout(() => {
       fn(args)
       timer = null
-    }, delay)
+    },delay)
   }
 }
 

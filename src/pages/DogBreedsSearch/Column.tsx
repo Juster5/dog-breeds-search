@@ -15,7 +15,7 @@ const Column: ColumnType[] = [
   {
     title: "Life Span",
     render(item: any) {
-      return item.life_span
+      return <span title='Life Span'>{item.life_span}</span>
     },
   },
   {
@@ -23,7 +23,7 @@ const Column: ColumnType[] = [
     render(item: any) {
       return (
         <a href={item.image.url} target='_blank' rel='noreferrer'>
-          <SImage link={item.image.url} alt='img' width={100} />
+          <SImage link={item.image.url} alt={item.name} width={100} />
         </a>
       )
     },

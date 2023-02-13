@@ -29,7 +29,7 @@ describe("debounce",() => {
     }
   });
 
-  test("don't pass delay value, debounce should be excuted after 1 second",() => {
+  test("don't pass delay value, debounce should be execute after 1 second",() => {
     let callCount = 0;
 
     let debounced = debounce(function () {
@@ -50,7 +50,7 @@ describe("debounce",() => {
     expect(callCount).toEqual(1);
   });
 
-  test("delay 5 sceond, debounce should be excuted after 5 second",() => {
+  test("delay 5 sceond, debounce should be execute after 5 seconds",() => {
     let callCount = 0;
 
     let debounced = debounce(function () {
@@ -73,7 +73,7 @@ describe("debounce",() => {
     expect(callCount).toEqual(1);
   });
 
-  test("debounce should be excuted one time within 1 second",() => {
+  test("after debounce, debounce should be execute one time within 1 second",() => {
     let callCount = 0;
 
     // before debounce
@@ -85,6 +85,8 @@ describe("debounce",() => {
     for (let i = 0; i < 5; i++) {
       fn();
     }
+
+    // before debounce, fn execute 5 times
     expect(callCount).toEqual(5);
 
     // after debounce
@@ -96,6 +98,7 @@ describe("debounce",() => {
 
     jest.runAllTimers();
 
+    // after debounce, fn execute 1 times
     expect(callCount).toEqual(1);
   });
 });
