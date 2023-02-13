@@ -1,6 +1,6 @@
 import SortDagBreed,{ commpareArea,LIFE_SPAN_DESC,LIFE_SPAN_ASC } from './SortDogBreed';
 
-describe('commpareArea',() => {
+describe('commpareArea should execute correctly',() => {
 
   test('8 - 15 years should equals 8 - 15 years',() => {
     expect(commpareArea('8 - 15 years','8 - 15 years')).toBe(0)

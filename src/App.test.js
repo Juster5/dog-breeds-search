@@ -44,6 +44,22 @@ const setup = async () => {
   render(<App />)
 }
 
+const fetchMockDataAndRender = async () => {
+  jest.useFakeTimers();
+
+  global.fetch = jest.fn(() => Promise.resolve({
+    status: 200,
+    json: () => Promise.resolve(mockResult),
+  })
+  );
+
+  render(<App />)
+
+  // because debounce, request will be sent after 1s
+  await act(() => {
+    jest.runAllTimers()
+  })
+}
 
 // beforeEach(() => {
 //   jest.useFakeTimers();
@@ -76,20 +92,7 @@ describe('ui renders correctly',() => {
 
   test('render table successfully',async () => {
 
-    jest.useFakeTimers();
-
-    global.fetch = jest.fn(() => Promise.resolve({
-      status: 200,
-      json: () => Promise.resolve(mockResult),
-    })
-    );
-
-    render(<App />)
-
-    // because debounce, request will be sent after 1s
-    await act(() => {
-      jest.runAllTimers()
-    })
+    await fetchMockDataAndRender()
 
     const AfricanHuntingDog = screen.getByText('African Hunting Dog')
     expect(AfricanHuntingDog).toBeInTheDocument()
@@ -101,12 +104,12 @@ describe('ui renders correctly',() => {
 
   });
 
-  test('render table unsuccefully, shows error and reload button',async () => {
+  test('render table unsuccefully, then shows error and reload button',async () => {
 
     jest.useFakeTimers();
 
-    global.fetch = jest.fn(() => Promise.reject()
-    );
+    // fetch reject
+    global.fetch = jest.fn(() => Promise.reject());
 
     render(<App />)
 
@@ -122,7 +125,6 @@ describe('ui renders correctly',() => {
 
     global.fetch.mockClear()
 
-
   });
 
 })
@@ -130,8 +132,6 @@ describe('ui renders correctly',() => {
 describe('interact correctly',() => {
 
   test('search button should be debounce',async () => {
-
-    jest.useFakeTimers();
 
     let callbackCount = 0
 
@@ -158,20 +158,8 @@ describe('interact correctly',() => {
 
 
   test('data can be sorted by life span desc correctly',async () => {
-    jest.useFakeTimers();
 
-    global.fetch = jest.fn(() => Promise.resolve({
-      status: 200,
-      json: () => Promise.resolve(mockResult), // mock result
-    })
-    );
-
-    render(<App />)
-
-    // because debounce, request will be sent after 1s
-    await act(() => {
-      jest.runAllTimers()
-    })
+    await fetchMockDataAndRender()
 
     // click sort by selector
     const selector = screen.getByTestId('s-selector');

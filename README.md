@@ -16,7 +16,7 @@ https://github.com/Juster5/dog-breeds-search
 
 cli: create react app
 ui: react
-test: jest and @testing-library/react, and msw mock http request
+test: jest and @testing-library/react
 
 ### Data can sort by life span, the rules as follow: (height is the same)
 

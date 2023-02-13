@@ -23,7 +23,7 @@ const Column: ColumnType[] = [
     render(item: any) {
       return (
         <a href={item.image.url} target='_blank' rel='noreferrer'>
-          <SImage link={item.image.url} alt={item.name} width={100} />
+          <SImage src={item.image.url} alt={item.name} width={100} />
         </a>
       )
     },

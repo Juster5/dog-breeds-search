@@ -59,9 +59,7 @@ const DogBreedsSearch = () => {
             setSortOption(el.title)
           }}
         />
-        <SButton loading={loading} onClick={debounceFetch}>
-          Search
-        </SButton>
+        <SButton onClick={debounceFetch}>Search</SButton>
       </div>
 
       {error && <button onClick={debounceFetch}> somethings error, click reload again</button>}
