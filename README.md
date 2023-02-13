@@ -14,9 +14,9 @@ https://github.com/Juster5/dog-breeds-search
 
 ### Framework
 
-cli: create react app
-ui: react
-test: jest and @testing-library/react
+- cli: create react app
+- ui: react
+- test: jest and @testing-library/react
 
 ### Data can sort by life span, the rules as follow: (height is the same)
 
