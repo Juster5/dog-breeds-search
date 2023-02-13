@@ -131,6 +131,8 @@ describe('interact correctly',() => {
 
   test('search button should be debounce',async () => {
 
+    jest.useFakeTimers();
+
     let callbackCount = 0
 
     global.fetch = jest.fn(() => callbackCount++);

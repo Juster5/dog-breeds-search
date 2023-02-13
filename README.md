@@ -11,7 +11,6 @@ https://github.com/Juster5/dog-breeds-search
 - Debounce, and unit tests
 - Images loading with indicator
 - Fetch api with handle errors
-- e2e tests
 
 ### Framework
 
