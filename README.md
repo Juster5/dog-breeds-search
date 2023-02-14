@@ -7,10 +7,10 @@ https://github.com/Juster5/dog-breeds-search
 ### Feature
 
 - Dog breeds search, and present result in table, click "Search" button to reload new data
-- Sort by height, name, life span unit tests
-- Debounce, and unit tests
-- Images loading with indicator
-- Fetch api with handle errors
+- Sort by height, name, life span unit tests, location: src/pages/DogBreedsSearch/SortDogBreed(test).js
+- Debounce, and unit tests, location: src/utils/debounce(test).js
+- Images loading with indicator, location: src/components/SImage
+- Fetch api with handle errors, location: src/pages/DogBreedsSearch/fetchData(test).js
 
 ### Framework
 
