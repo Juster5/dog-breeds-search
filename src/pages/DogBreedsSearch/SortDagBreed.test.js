@@ -1,24 +1,24 @@
 import SortDagBreed,{ commpareArea,LIFE_SPAN_DESC,LIFE_SPAN_ASC } from './SortDogBreed';
 
-describe('commpareArea should execute correctly',() => {
+describe('commpareArea execute correctly',() => {
 
-  test('8 - 15 years should equals 8 - 15 years',() => {
+  test('8 - 15 years equals 8 - 15 years',() => {
     expect(commpareArea('8 - 15 years','8 - 15 years')).toBe(0)
   })
 
-  test('8 - 15 years should smaller than 12 -15 years',() => {
+  test('8 - 15 years smaller than 12 -15 years',() => {
     expect(commpareArea('8 - 15 years','12 - 15 years')).toBe(1)
   })
 
-  test('8 - 15 years should smaller than 8 -17 years',() => {
+  test('8 - 15 years smaller than 8 -17 years',() => {
     expect(commpareArea('8 - 15 years','12 - 15 years')).toBe(1)
   })
 
-  test('7 - 15 years should smaller than 8 -15 years',() => {
+  test('7 - 15 years smaller than 8 -15 years',() => {
     expect(commpareArea('7 - 15 years','8 - 15 years')).toBe(1)
   })
 
-  test('9 years should smaller than 8 - 15 years',() => {
+  test('9 years smaller than 8 - 15 years',() => {
     expect(commpareArea('8 - 15 years','9 years')).toBe(-1)
   })
 
